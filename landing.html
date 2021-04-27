@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: sans-serif;}
+
+#flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: DodgerBlue;
+}
+
+#flex-container > div {
+  background-color: #f1f1f1;
+  width: 150px;
+  height: 150px;
+  margin: 4px;
+  text-align: center;
+  font-size: 16px;
+}
+
+.modal-button{
+  width: 90%;
+  height: 18%;
+}
+
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  width: 400px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  animation-name: animatetop;
+  animation-duration: 0.4s
+}
+
+@keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  float: right;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-header {
+  padding: 2px 12px;
+  background-color: #5cb85c;
+  color: white;
+}
+
+.modal-body {padding: 2px 12px;}
+
+</style>
+</head>
+<body>
+<h1>The flex-wrap Property</h1>
+
+<p>The "flex-wrap: wrap;" specifies that the flex items will wrap if necessary:</p>
+
+<div class="navbar">
+  <a href="index.html">Home</a>
+  <a href="#">News</a>
+  <a href="#">Contact</a>
+  <a href="#">Link</a>
+</div>
+
+
+<div id="flex-container">
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
+  <div><a>Cindy</a></div>
+  <div><a>Bob</a></div>
+  <div><img src="https://raw.githubusercontent.com/ghost/repo/master/usr001/mdl001/1.jpg" loading="lazy" style="max-width:65%"><br><a>howto</a><button class="modal-button" href="#myModal1">ModalOpenModal</button></div>
+  <div><a>tryit</a><button class="modal-button" href="#myModal2">Open Modal</button></div>
+  <div><a>Billy</a></div>
+  <div><a>Agnes</a></div>  
+  <div><a>Calvin</a></div>
+  <div><a>Some text</a></div>
+  <div><a>9</a></div>  
+  <div><a>10</a></div>
+  <div>11</div>
+  <div>12</div>
+</div>
+
+<p>Try resizing the browser window.</p>
+
+
+<!-- The Modal -->
+<div id="myModal1" class="modal">
+
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">×</span>
+      <h3>Modal Header</h3>
+    </div>
+    <div class="modal-body">
+      <p>Some text in the Modal Body</p>
+<form id="myForm">
+  <div>
+    <label for="addr">addr</label>
+    <input type="text" name="addr" required placeholder="Enter addr">
+  </div>
+  <div>
+    <label for="eml">eml</label>
+    <input type="email" name="eml" required placeholder="Enter email">
+  </div>
+<input type="submit" value="Register">
+<br><br>
+</form>
+    </div>
+  </div>
+
+</div>
+
+<div id="myModal2" class="modal">
+
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">×</span>
+      <h3>Modal Header</h3>
+    </div>
+    <div class="modal-body">
+      <p>2Some text in the Modal Body</p>
+      <p>2Some other text...</p>
+    </div>
+  </div>
+
+</div>
+
+<!-- 
+<h2>3nd Modal</h2>
+
+<button class="modal-button" href="#myModal3">Open Modal</button>
+
+<div id="myModal3" class="modal">
+
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">×</span>
+      <h3>Modal Header</h3>
+    </div>
+    <div class="modal-body">
+      <p>3Some text in the Modal Body</p>
+      <p>3Some other text...</p>
+    </div>
+  </div>
+
+</div> 
+-->
+
+<script>
+
+function myFunction() {
+    var input, filter, fl, div, a, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    fl = document.getElementById("flex-container");
+    div = fl.getElementsByTagName("div");
+    for (i = 0; i < div.length; i++) {
+        a = div[i].getElementsByTagName("a")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            div[i].style.display = "";
+        } else {
+            div[i].style.display = "none";
+        }
+    }
+}
+
+
+// Get the button that opens the modal
+var btn = document.querySelectorAll("button.modal-button");
+
+// All page modals
+var modals = document.querySelectorAll('.modal');
+
+// Get the <span> element that closes the modal
+var spans = document.getElementsByClassName("close");
+
+// When the user clicks the button, open the modal
+for (var i = 0; i < btn.length; i++) {
+ btn[i].onclick = function(e) {
+    e.preventDefault();
+    modal = document.querySelector(e.target.getAttribute("href"));
+    modal.style.display = "block";
+ }
+}
+
+// When the user clicks on <span> (x), close the modal
+for (var i = 0; i < spans.length; i++) {
+ spans[i].onclick = function() {
+    for (var index in modals) {
+      if (typeof modals[index].style !== 'undefined') modals[index].style.display = "none";    
+    }
+ }
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target.classList.contains('modal')) {
+     for (var index in modals) {
+      if (typeof modals[index].style !== 'undefined') modals[index].style.display = "none";    
+     }
+    }
+}
+
+
+var theDiv = document.getElementById('myForm');
+var succ = document.createTextNode('Thank you! You will receive an email with login after we verify the transaction');
+var fail = document.createTextNode('Oops! Something went wrong. Please try again later.');
+
+window.addEventListener( "load", function () {
+  function sendData() {
+    const XHR = new XMLHttpRequest();
+
+    // Bind the FormData object and the form element
+    const FD = new FormData( form );
+
+    // Define what happens on successful data submission
+    XHR.addEventListener( "load", function(event) {
+      theDiv.appendChild(succ);
+    } );
+
+    // Define what happens in case of error
+    XHR.addEventListener( "error", function( event ) {
+      theDiv.appendChild(fail);
+    } );
+
+    // Set up our request
+    XHR.open( "POST", "https://.workers.dev/" );
+
+    // The data sent is what the user provided in the form
+    XHR.send( FD );
+  }
+
+  // Access the form element...
+  const form = document.getElementById( "myForm" );
+
+  // ...and take over its submit event.
+  form.addEventListener( "submit", function ( event ) {
+    event.preventDefault();
+
+    sendData();
+  } );
+} );
+
+</script>
+
+</body>
+</html>
+<!-- https://www.coingecko.com/en/api -->

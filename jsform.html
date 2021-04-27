@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<form action="" method="POST">
+  <div>
+    Name
+    <input type="text" name="name" />
+  </div>
+
+  <div>
+    Email
+    <input type="email" name="email" required />
+  </div>
+
+  <button type="submit">Submit</button>
+</form>
+
+<script>
+
+document.addEventListener("submit", (e) => {
+  // Store reference to form to make later code easier to read
+  const form = e.target;
+
+  // Prevent the default form submit
+  e.preventDefault();
+});
+
+document.addEventListener("submit", (e) => {
+  // Store reference to form to make later code easier to read
+  const form = e.target;
+
+  // Post data using the Fetch API
+  fetch(form.action, {
+    method: form.method,
+    body: new FormData(form),
+  });
+
+  // Prevent the default form submit
+  e.preventDefault();
+});
+
+</script>
+
+</body>
+</html>
+
+
+<!-- https://pqina.nl/blog/async-form-posts-with-a-couple-lines-of-vanilla-javascript 
+https://simonplend.com/how-to-use-fetch-to-post-form-data-as-json-to-your-api 
+https://github.com/dcode-youtube/js-ajax-form-submission/blob/master/index.html -->

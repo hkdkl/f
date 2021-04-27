@@ -1,0 +1,30 @@
+[
+  {
+    "mdl": "mdl001/1.jpg",
+    "date": "2021.05.30.23.59",
+    "body": "body5",
+    "mg": ["https://via.placeholder.com/900/00ffff.jpg"],
+    "vd": ["https://www.w3schools.com/html/movie.mp4"]
+  },
+  {
+    "mdl": "mdl002/2.jpg",
+    "date": "2021.05.30.23.58",
+    "body": "body6",
+    "mg": [""],
+    "vd": [""]
+  },
+  {
+    "mdl": "mdl003/3.jpg",
+    "date": "2021.05.30.23.57",
+    "body": "body7",
+    "mg": "https://via.placeholder.com/200/f0fff0.jpg",
+    "vd": "https://www.w3schools.com/html/movie.mp4"
+  },
+  {
+    "mdl": "mdl001/1.jpg",
+    "date": "2021.05.30.23.56",
+    "body": "body8",
+    "mg": "",
+    "vd": ""
+  }
+]
