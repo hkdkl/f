@@ -4,26 +4,28 @@
 <title>Page Title</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-body {font-family: sans-serif;}
+body {font-family: sans-serif;text-align: center;}
 
 #flex-container {
   display: flex;
   flex-wrap: wrap;
   background-color: DodgerBlue;
+  max-width: 900px;
+  justify-content: center;
+  margin: auto;
 }
 
 #flex-container > div {
   background-color: #f1f1f1;
-  width: 150px;
-  height: 150px;
-  margin: 4px;
-  text-align: center;
+  width: 146px;
+  height: 200px;
+  margin: 2px;
   font-size: 16px;
 }
 
 .modal-button{
-  width: 90%;
-  height: 18%;
+  width: 60%;
+  height: 15%;
 }
 
 #myInput {
@@ -32,9 +34,9 @@ body {font-family: sans-serif;}
   background-repeat: no-repeat;
   width: 100%;
   font-size: 16px;
-  padding: 12px 20px 12px 40px;
+  text-align: center;
+  padding: 12px;
   border: 1px solid #ddd;
-  margin-bottom: 12px;
 }
 
 /* The Modal (background) */
@@ -49,7 +51,7 @@ body {font-family: sans-serif;}
   height: 100%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
   background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
 }
 
 /* Modal Content */
@@ -57,11 +59,11 @@ body {font-family: sans-serif;}
   position: relative;
   background-color: #fefefe;
   margin: auto;
-  padding: 0;
   width: 400px;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
   animation-name: animatetop;
-  animation-duration: 0.4s
+  animation-duration: 0.4s;
+  padding:10px 0px 20px
 }
 
 @keyframes animatetop {
@@ -71,9 +73,9 @@ body {font-family: sans-serif;}
 
 /* The Close Button */
 .close {
-  color: white;
+  color: green;
   float: right;
-  font-size: 24px;
+  font-size: 30px;
   font-weight: bold;
 }
 
@@ -83,14 +85,6 @@ body {font-family: sans-serif;}
   text-decoration: none;
   cursor: pointer;
 }
-
-.modal-header {
-  padding: 2px 12px;
-  background-color: #5cb85c;
-  color: white;
-}
-
-.modal-body {padding: 2px 12px;}
 
 </style>
 </head>
@@ -105,22 +99,19 @@ body {font-family: sans-serif;}
   <a href="#">Contact</a>
   <a href="#">Link</a>
 </div>
+<br><br>
 
 
 <div id="flex-container">
-<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
-  <div><a>Cindy</a></div>
-  <div><a>Bob</a></div>
-  <div><img src="https://raw.githubusercontent.com/ghost/repo/master/usr001/mdl001/1.jpg" loading="lazy" style="max-width:65%"><br><a>howto</a><button class="modal-button" href="#myModal1">ModalOpenModal</button></div>
-  <div><a>tryit</a><button class="modal-button" href="#myModal2">Open Modal</button></div>
-  <div><a>Billy</a></div>
-  <div><a>Agnes</a></div>  
-  <div><a>Calvin</a></div>
+  <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
+  <div><img src="https://picsum.photos/800/800" loading="lazy" style="max-width:100%;max-height:73%"><br><a>mdl001mdl001</a><br><button class="modal-button" href="#myModal1">Subscribe</button></div>
+  <div><img src="https://picsum.photos/600/800" loading="lazy" style="max-width:100%;max-height:73%"><br><a>mdl002mdl002</a><br><button class="modal-button" href="#myModal1">Subscribe</button></div>
+  <div><img src="https://picsum.photos/144/144" loading="lazy" style="max-width:100%;max-height:73%"><br><a>mdl003mdl003</a><br><button class="modal-button" href="#myModal2">OpenModal</button></div>
+  <div><img src="https://picsum.photos/600/600" loading="lazy" style="max-width:100%;max-height:73%"><br><a>mdl004mdl004</a><br><button class="modal-button" href="#myModal1">Subscribe</button></div>
+  <div><img src="https://raw.githubusercontent.com/ghost/repo/m/usr001/mdl001/1.jpg" loading="lazy" style="max-width:65%"><a>howto</a><br><button class="modal-button" href="#myModal1">Subscribe</button></div>
   <div><a>Some text</a></div>
-  <div><a>9</a></div>  
-  <div><a>10</a></div>
-  <div>11</div>
-  <div>12</div>
+  <div><a>7</a></div>  
+  <div><a>xx</a></div>
 </div>
 
 <p>Try resizing the browser window.</p>
@@ -128,14 +119,30 @@ body {font-family: sans-serif;}
 
 <!-- The Modal -->
 <div id="myModal1" class="modal">
+  <div class="modal-content">
+      <span class="close">×</span>
+      <p>Some text in the Modal Body</p>
+<form id="myForm">
+  <div>
+    <input type="text" name="addr" required placeholder="Enter addr">
+  </div><p>
+  <div>
+    <input type="email" name="eml" required placeholder="Enter email">
+  </div>
+<br>
+<input type="submit" value="Register">
+</form>
+  </div>
+</div>
 
+<div id="myModal2" class="modal">
   <div class="modal-content">
     <div class="modal-header">
       <span class="close">×</span>
       <h3>Modal Header</h3>
     </div>
     <div class="modal-body">
-      <p>Some text in the Modal Body</p>
+      <p>Some text in the Modal2 Body</p>
 <form id="myForm">
   <div>
     <label for="addr">addr</label>
@@ -150,23 +157,8 @@ body {font-family: sans-serif;}
 </form>
     </div>
   </div>
-
 </div>
 
-<div id="myModal2" class="modal">
-
-  <div class="modal-content">
-    <div class="modal-header">
-      <span class="close">×</span>
-      <h3>Modal Header</h3>
-    </div>
-    <div class="modal-body">
-      <p>2Some text in the Modal Body</p>
-      <p>2Some other text...</p>
-    </div>
-  </div>
-
-</div>
 
 <!-- 
 <h2>3nd Modal</h2>
