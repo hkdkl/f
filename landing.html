@@ -10,7 +10,7 @@ body {font-family: sans-serif;text-align: center;}
   display: flex;
   flex-wrap: wrap;
   background-color: DodgerBlue;
-  max-width: 900px;
+  max-width: 600px;
   justify-content: center;
   margin: auto;
 }
@@ -44,7 +44,7 @@ body {font-family: sans-serif;text-align: center;}
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
+  padding-top: 200px; /* Location of the box */
   left: 0;
   top: 0;
   width: 100%; /* Full width */
@@ -63,7 +63,7 @@ body {font-family: sans-serif;text-align: center;}
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
   animation-name: animatetop;
   animation-duration: 0.4s;
-  padding:10px 0px 20px
+  padding:20px 0px;
 }
 
 @keyframes animatetop {
@@ -75,8 +75,8 @@ body {font-family: sans-serif;text-align: center;}
 .close {
   color: green;
   float: right;
-  font-size: 30px;
-  font-weight: bold;
+  margin-top: -25px;
+  font-size: 28px;
 }
 
 .close:hover,
@@ -123,39 +123,32 @@ body {font-family: sans-serif;text-align: center;}
       <span class="close">×</span>
       <p>Some text in the Modal Body</p>
 <form id="myForm">
-  <div>
-    <input type="text" name="addr" required placeholder="Enter addr">
-  </div><p>
-  <div>
+  <input type="hidden" name="add" value="3487348734873487348734873487">
+    <input type="text" name="usr" required placeholder="Enter username">
+  <p>
     <input type="email" name="eml" required placeholder="Enter email">
-  </div>
-<br>
-<input type="submit" value="Register">
+  <p>
+    <input type="submit" value="Register">
 </form>
   </div>
 </div>
 
 <div id="myModal2" class="modal">
   <div class="modal-content">
-    <div class="modal-header">
       <span class="close">×</span>
-      <h3>Modal Header</h3>
-    </div>
-    <div class="modal-body">
-      <p>Some text in the Modal2 Body</p>
+      <p>Some text in the Modal Body</p>
 <form id="myForm">
+  <input type="hidden" name="add" value="3487348734873487348734873487">
   <div>
-    <label for="addr">addr</label>
-    <input type="text" name="addr" required placeholder="Enter addr">
-  </div>
+    <input type="text" name="usr" required placeholder="Enter username">
+  </div><p>
   <div>
-    <label for="eml">eml</label>
     <input type="email" name="eml" required placeholder="Enter email">
   </div>
-<input type="submit" value="Register">
-<br><br>
+  <div>
+    <input type="submit" value="Register">
+  </div>
 </form>
-    </div>
   </div>
 </div>
 
@@ -260,7 +253,7 @@ window.addEventListener( "load", function () {
     } );
 
     // Set up our request
-    XHR.open( "POST", "https://.workers.dev/" );
+    XHR.open( "POST", "https://webhook.site" );
 
     // The data sent is what the user provided in the form
     XHR.send( FD );
